@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home.main"><img class="logo" src="./img/logo-text.png"/></a>
+        <button id="navbar-collapsed" type="button" class="navbar-toggle" ng-click="isCollapsedNavBar = !isCollapsedNavBar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div id="navbar" class="navbar-collapse text-uppercase" uib-collapse="!isCollapsedNavBar">
+        <ul class="nav navbar-nav">
+            <li ng-class="{active: vm.activePage[application.config.states.support]}"><a
+                    ui-sref=".support" sw-collapse-navbar>Live support</a></li>
+            <li ng-class="{active: vm.activePage[application.config.states.guides]}"><a
+                    ui-sref=".guides" sw-collapse-navbar>User guides</a></li>
+        </ul>
+        <div ui-view="authenticationBar"></div>
+    </div>
+    <uib-progressbar class="progress-striped active busy-indicator" type="busy"
+                     value="100"
+                     min="0" max="100">
+    </uib-progressbar>
+</div>

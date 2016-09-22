@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+// file includes references to source templates and defines a build order
+
+@import "variables";
+
+$elusiveWebfontPath: '../fonts/';
+@import "../bower_components/elusive-iconfont/sass/elusive-webfont.scss";
+
+$fa-font-path: "../fonts/";
+@import "../bower_components/font-awesome/scss/font-awesome.scss";
+
+@import "../bower_components/angularjs-toaster/toaster.scss";
+
+$icon-font-path: "../bower_componetns/bootstrap-sass/assets/fonts/bootstrap/";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+@import "dashboard";
+
+@import "flexbox";
+
+@import "../bower_components/angularjs-toaster/toaster.scss";
+
+@import "toaster";

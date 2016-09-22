@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- ################# -->
+    <!--  THIS IS AUTO GENERATED TEMPLATE RESULT. DO NOT CHANGE IT!!! -->
+    <!-- ################# -->
+    <title>Dashboard</title>
+    <meta name="description" content="Exponea assignment - Dashboard"/>
+    <meta name="keywords" content="Exponea assignment"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="-1"/>
+
+
+
+    <!-- styles:css -->
+    <link rel="stylesheet" href="/css/app.css">
+    <!-- endinject -->
+
+    <!-- bower:css -->
+    <!-- endinject -->
+
+    <!-- bower:js -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="/bower_components/moment/min/moment-with-locales.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="/bower_components/angularjs-toaster/toaster.min.js"></script>
+    <script src="/bower_components/string-format-js/format.js"></script>
+    <!-- endinject -->
+
+
+    <!-- scripts:js -->
+    <script src="/js/configuration/configuration.js"></script>
+    <script src="/js/services/services.js"></script>
+    <script src="/js/app.module.js"></script>
+    <script src="/js/services/decorators.js"></script>
+    <script src="/js/resources/repositories.js"></script>
+    <script src="/js/resources/resolvers.js"></script>
+    <script src="/js/filters/filters.js"></script>
+    <script src="/js/controllers/controllers.js"></script>
+    <script src="/js/components/components.js"></script>
+    <script src="/js/app.run.js"></script>
+    <script src="/js/app.route.js"></script>
+    <script src="/js/app.config.js"></script>
+    <!-- endinject -->
+
+
+</head>
+<body ng-app="dashboard" ng-cloak class="Site">
+
+<nav ui-view="header" class="navbar navbar-default navbar-fixed-top"></nav>
+<div ui-view class="container Site-content"></div>
+<footer ui-view="footer" class="Site-footer"></footer>
+
+<toaster-container toaster-options="{
+  'showCloseButton': true,
+  'close-button':{ 'toast-warning': true, 'toast-error': true, 'toast-info': true, 'toast-success': true },
+  'debug': false,
+  'position-class': 'toast-top-right',
+  'showDuration': '200',
+  'hideDuration': '1000',
+  'showEasing': 'swing',
+  'hideEasing': 'linear',
+  'showMethod': 'fadeIn',
+  'hideMethod': 'fadeOut'
+}"></toaster-container>
+
+</body>
+</html>

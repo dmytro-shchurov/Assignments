@@ -1,0 +1,62 @@
+{
+  "name": "dashboard",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-bootstrap": "^0.14.3",
+    "angular-ui-router": "^0.2.15",
+    "angular-resource": "^1.4.8",
+    "angular-sanitize": "^1.4.8",
+    "angular-animate": "^1.4.8",
+    "underscore": "^1.8.3",
+    "moment": "^2.10.6",
+    "angular-cookies": "^1.4.8",
+    "angular-local-storage": "^0.2.3",
+    "bootstrap-sass": "~3.3.6",
+    "elusive-iconfont": "*",
+    "font-awesome": "^4.5.0",
+    "angularjs-toaster": "^0.4.181",
+    "string-format-js": "^0.1.5"
+  },
+  "overrides": {
+    "underscore": {
+      "main": "./underscore-min.js"
+    },
+    "angular": {
+      "main": "./angular.js"
+    },
+    "angular-bootstrap": {
+      "main": "./ui-bootstrap-tpls.min.js"
+    },
+    "angular-animate": {
+      "main": "./angular-animate.min.js"
+    },
+    "angular-resource": {
+      "main": "./angular-resource.min.js"
+    },
+    "angular-cookies": {
+      "main": "./angular-cookies.min.js"
+    },
+    "angular-ui-router": {
+      "main": "./release/angular-ui-router.min.js"
+    },
+    "moment": {
+      "main": "./min/moment-with-locales.min.js"
+    },
+    "angular-local-storage": {
+      "main": "./dist/angular-local-storage.min.js"
+    },
+    "bootstrap-sass": {
+      "ignore": true
+    },
+    "angularjs-toaster": {
+      "main": "./toaster.min.js"
+    },
+    "elusive-iconfont": {
+      "ignore": true
+    },
+    "font-awesome": {
+      "ignore": true
+    }
+  }
+}

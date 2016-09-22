@@ -1,0 +1,8 @@
+*.userprefs
+*.idea*
+dashboard/node_modules
+**/dist
+**/.tmp
+**/.sass-cache
+dashboard/bower_components
+**/*.log

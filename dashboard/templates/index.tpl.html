@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- ################# -->
+    <!--  <%= tmpl_msg %> -->
+    <!-- ################# -->
+    <title>Dashboard</title>
+    <meta name="description" content="Exponea assignment - Dashboard"/>
+    <meta name="keywords" content="Exponea assignment"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="-1"/>
+
+
+
+    <!-- styles:css -->
+    <!-- endinject -->
+
+    <!-- bower:css -->
+    <!-- endinject -->
+
+    <!-- bower:js -->
+    <!-- endinject -->
+
+
+    <!-- scripts:js -->
+    <!-- endinject -->
+
+
+</head>
+<body ng-app="dashboard" ng-cloak class="Site">
+
+<nav ui-view="header" class="navbar navbar-default navbar-fixed-top"></nav>
+<div ui-view class="container Site-content"></div>
+<footer ui-view="footer" class="Site-footer"></footer>
+
+<toaster-container toaster-options="{
+  'showCloseButton': true,
+  'close-button':{ 'toast-warning': true, 'toast-error': true, 'toast-info': true, 'toast-success': true },
+  'debug': false,
+  'position-class': 'toast-top-right',
+  'showDuration': '200',
+  'hideDuration': '1000',
+  'showEasing': 'swing',
+  'hideEasing': 'linear',
+  'showMethod': 'fadeIn',
+  'hideMethod': 'fadeOut'
+}"></toaster-container>
+
+</body>
+</html>
