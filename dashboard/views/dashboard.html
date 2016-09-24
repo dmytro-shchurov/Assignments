@@ -3,20 +3,20 @@
 <div class="row">
     <div class="col-lg-2">
         <div class="list-group">
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-line-chart"></i>Trend</button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-bar-chart"></i>Funnel</button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-file-text"></i>Report</button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-refresh"></i>Retention
+            <button type="button" class="list-group-item" exa-widget-icon="trend"><i class="fa fa-line-chart"></i>Trend</button>
+            <button type="button" class="list-group-item" exa-widget-icon="funnel"><i class="fa fa-bar-chart"></i>Funnel</button>
+            <button type="button" class="list-group-item" exa-widget-icon="report"><i class="fa fa-file-text"></i>Report</button>
+            <button type="button" class="list-group-item" exa-widget-icon="retention"><i class="fa fa-refresh"></i>Retention
             </button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-cubes"></i>Segmentation
+            <button type="button" class="list-group-item" exa-widget-icon="segmentation"><i class="fa fa-cubes"></i>Segmentation
             </button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-globe"></i>Geo Analysys
+            <button type="button" class="list-group-item" exa-widget-icon="analysis"><i class="fa fa-globe"></i>Geo Analysis
             </button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-maxcdn"></i>Metric</button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-angle-left"></i><i
+            <button type="button" class="list-group-item" exa-widget-icon="metric"><i class="fa fa-maxcdn"></i>Metric</button>
+            <button type="button" class="list-group-item" exa-widget-icon="html"><i class="fa fa-angle-left"></i><i
                     class="fa fa-angle-right"></i>HTML
             </button>
-            <button type="button" class="list-group-item" exa-widget-icon><i class="fa fa-file-text-o"></i>Simple text
+            <button type="button" class="list-group-item" exa-widget-icon="text"><i class="fa fa-file-text-o"></i>Simple text
             </button>
         </div>
     </div>
@@ -24,11 +24,16 @@
         <div class="row" ng-repeat="stripe in vm.dashboard.stripes">
             <!-- widgts content -->
             <div class="col-lg-12"><!-- stripes-->
-                <div exa-widget-stripe>
+                <div exa-widget-stripe="stripe">
                     <div class="row widget-stripe"></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3" ng-repeat="widget in stripe.widgets">{{::widget.name}}</div>
+                    <div class="col-lg-{{12/stripe.widgets.length}}" ng-repeat="widget in stripe.widgets">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">{{widget.name}}</div>
+                            <div class="panel-body"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

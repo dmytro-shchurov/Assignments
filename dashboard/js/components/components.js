@@ -31,9 +31,11 @@
         return {
             transclude: false,
             restrict: 'A',
-            scope: true,
+            scope: {
+                exaWidgetIcon: '@'
+            },
             link: function (scope, element) {
-                scope.icon = dashboard.registerIcon();
+                scope.icon = dashboard.registerIcon(scope.exaWidgetIcon);
 
                 var startX = 0, startY = 0, x = 0, y = 0;
 
@@ -83,8 +85,7 @@
                 element.on('mousedown', mousedown);
 
                 dashboard.on('accept', function (icon, placeholder) {
-                    if (scope.icon.id !== icon.id)
-                    {
+                    if (scope.icon.id !== icon.id) {
                         return;
                     }
 
@@ -102,15 +103,18 @@
         return {
             transclude: false,
             restrict: 'A',
+            scope: {
+                exaWidgetStripe: '='
+            },
             link: function (scope, element) {
 
                 var iconCaptured = null;
 
-                function setActive(){
+                function setActive() {
                     element.addClass('active');
                 }
 
-                function setInactive(){
+                function setInactive() {
                     element.removeClass('active');
                 }
 
@@ -122,6 +126,10 @@
                 }
 
                 function mouseup() {
+                    if (iconCaptured == null)
+                        return;
+
+                    dashboard.addWidget(scope.exaWidgetStripe, iconCaptured);
                 }
 
                 function mouseleave() {

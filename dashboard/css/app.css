@@ -9153,7 +9153,9 @@ body {
   padding-top: 4px;
   padding-bottom: 4px;
   position: relative;
-  z-index: -10; }
+  z-index: -10;
+  margin-top: 8px;
+  margin-bottom: 8px; }
 
 .active > .widget-stripe {
   background-color: #8a6d3b; }

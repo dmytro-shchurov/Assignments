@@ -4,11 +4,11 @@
 (function (angular) {
     'use strict';
 
-    function DashboardService() {
+    function DashboardService($rootScope) {
         var callbacks = {};
         var iconId = 1;
 
-        function isArray(obj){
+        function isArray(obj) {
             return toString.call(obj) === '[object Array]';
         }
 
@@ -51,8 +51,13 @@
                 if (!isArray(subscribers))
                     return;
             },
-            registerIcon: function () {
-                return {id: iconId++};
+            registerIcon: function (kind) {
+                return {id: iconId++, kind: kind};
+            },
+            addWidget: function(stripe, icon){
+                $rootScope.safeApply(function () {
+                    stripe.widgets.push({name: icon.kind, draft: true});
+                });
             }
         };
 
@@ -257,6 +262,6 @@
         .factory('underscore', ['$window', UnderscoreFactory])
         .factory('message', ['$rootScope', 'underscore', MessageFactory])
         .factory('networkActivity', ['$timeout', 'config', NetworkActivityFactory])
-        .factory('dashboard', [DashboardService])
+        .factory('dashboard', ['$rootScope', DashboardService])
         .provider('application', [ApplicationProvider]);
 })(window.angular);
