@@ -9149,9 +9149,14 @@ body {
 .widget-stripe {
   height: 10px;
   width: 100%;
-  background-color: #8a6d3b;
+  background-color: #eee5d6;
   padding-top: 4px;
-  padding-bottom: 4px; }
+  padding-bottom: 4px;
+  position: relative;
+  z-index: -10; }
+
+.active > .widget-stripe {
+  background-color: #8a6d3b; }
 
 .list-group-item i {
   float: left;

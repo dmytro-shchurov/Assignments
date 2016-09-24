@@ -106,9 +106,18 @@
 
                 var iconCaptured = null;
 
+                function setActive(){
+                    element.addClass('active');
+                }
+
+                function setInactive(){
+                    element.removeClass('active');
+                }
+
                 function mouseenter() {
                     if (iconCaptured) {
                         dashboard.placeholderAccepting(iconCaptured, scope);  // scope is a temporary solution
+                        setActive();
                     }
                 }
 
@@ -116,8 +125,10 @@
                 }
 
                 function mouseleave() {
-                    if (iconCaptured)
+                    if (iconCaptured) {
                         dashboard.placeholderAccepting(iconCaptured, false);
+                        setInactive();
+                    }
                 }
 
                 element.on('mouseenter', mouseenter);
@@ -130,6 +141,7 @@
 
                 dashboard.on('release', function (icon) {
                     iconCaptured = null;
+                    setInactive();
                 });
             }
         }

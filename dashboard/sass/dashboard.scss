@@ -32,9 +32,17 @@ body {
 .widget-stripe {
   height: 10px;
   width: 100%;
-  background-color: $state-warning-text;
+  background-color: lighten($state-warning-text, 50%);
   padding-top: 4px;
   padding-bottom: 4px;
+  position: relative;
+  z-index: -10;
+}
+
+.active {
+  >.widget-stripe {
+    background-color: $state-warning-text;
+  }
 }
 
 .list-group-item i {
