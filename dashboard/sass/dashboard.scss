@@ -71,7 +71,7 @@ footer {
       > a:hover, a:focus {
         background-color: transparent;
       }
-      > a {
+      > a, span {
         padding: 5px 15px
       }
     }
@@ -232,8 +232,10 @@ button {
 
 .navbar-nav {
   > li {
-    > a {
+    > a, span {
       height: $navbar-height;
+      display: inline;
+      padding: 10px 15px;
     }
   }
 }

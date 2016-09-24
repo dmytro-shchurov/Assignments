@@ -1,0 +1,7 @@
+<ul class="nav navbar-nav">
+    <li ng-repeat="node in $ctrl.nodes">
+        <span ui-sref="^.{{node.state}}" ng-if="!$last">{{node.title}}</span>
+        <span ng-if="$last">{{node.title}}</span>
+        <span ng-if="!$last"> | </span>
+    </li>
+</ul>

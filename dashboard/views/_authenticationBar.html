@@ -1,5 +1,5 @@
-<ul class="nav navbar-nav navbar-right" ng-show="vm.userAuthenticated">
-    <li><a ui-sref=".profile">
+
+    <a ui-sref=".profile" ng-show="vm.userAuthenticated">
         <button type="button"
                 class="btn btn-sm btn-warning"><span
                 class="visible-lg visible-xs">{{vm.profile.name}}</span><span
@@ -7,5 +7,4 @@
                                                  uib-tooltip="{{vm.profile.name}}"
                                                  tooltip-placement="left" tooltip-class="tooltip-warning"></i></span>
         </button>
-    </a></li>
-</ul>
+    </a>
