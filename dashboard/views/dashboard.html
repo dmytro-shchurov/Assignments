@@ -28,8 +28,8 @@
                     <div class="row widget-stripe"></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-{{12/stripe.widgets.length}}" ng-repeat="widget in stripe.widgets">
-                        <div class="panel panel-primary">
+                    <div class="col-lg-12" style="width: {{100/stripe.widgets.length}}%;" ng-repeat="widget in stripe.widgets">
+                        <div class="panel" ng-class="{'panel-primary': !widget.draft, 'panel-success': widget.draft}">
                             <div class="panel-heading">{{widget.name}}</div>
                             <div class="panel-body"></div>
                         </div>

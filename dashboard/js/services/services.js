@@ -56,7 +56,7 @@
             },
             addWidget: function(stripe, icon){
                 $rootScope.safeApply(function () {
-                    stripe.widgets.push({name: icon.kind, draft: true});
+                    stripe.widgets.unshift({name: icon.kind, draft: true});
                 });
             }
         };
