@@ -4,6 +4,61 @@
 (function (angular) {
     'use strict';
 
+    function DashboardService() {
+        var callbacks = {};
+        var iconId = 1;
+
+        function isArray(obj){
+            return toString.call(obj) === '[object Array]';
+        }
+
+        function fire(event, icon, placeholder) {
+            var subscribers = callbacks[event];
+
+            if (!subscribers || !subscribers.length)
+                return;
+
+            angular.forEach(subscribers, function (callback) {
+                callback(icon, placeholder);
+            });
+        }
+
+        var dashboard = {
+            iconCaptured: function (icon) {
+                fire('capture', icon);
+            },
+            iconReleased: function (icon) {
+                fire('release', icon);
+            },
+            placeholderAccepting: function (icon, placeholder) {
+                fire('accept', icon, placeholder);
+            },
+            on: function (event, callback) {
+                if (!event || !callback)
+                    return;
+
+                var subscribers = callbacks[event];
+                if (!isArray(subscribers))
+                    callbacks[event] = [];
+
+                callbacks[event].push(callback);
+            },
+            off: function (event, callback) {
+                if (!event || !callback)
+                    return;
+
+                var subscribers = callbacks[event];
+                if (!isArray(subscribers))
+                    return;
+            },
+            registerIcon: function () {
+                return {id: iconId++};
+            }
+        };
+
+        return dashboard;
+    }
+
     function UnderscoreFactory($window) {
         return $window._;
     }
@@ -202,5 +257,6 @@
         .factory('underscore', ['$window', UnderscoreFactory])
         .factory('message', ['$rootScope', 'underscore', MessageFactory])
         .factory('networkActivity', ['$timeout', 'config', NetworkActivityFactory])
+        .factory('dashboard', [DashboardService])
         .provider('application', [ApplicationProvider]);
 })(window.angular);

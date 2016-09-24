@@ -37,10 +37,13 @@ body {
   padding-bottom: 4px;
 }
 
-
 .list-group-item i {
   float: left;
   margin-right: 8px;
+}
+
+.list-group-item.active {
+  z-index: 0;
 }
 
 .footer {
