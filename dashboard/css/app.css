@@ -9153,6 +9153,10 @@ body {
   padding-top: 4px;
   padding-bottom: 4px; }
 
+.list-group-item i {
+  float: left;
+  margin-right: 8px; }
+
 .footer {
   position: absolute;
   bottom: 0;

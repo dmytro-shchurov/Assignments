@@ -37,6 +37,12 @@ body {
   padding-bottom: 4px;
 }
 
+
+.list-group-item i {
+  float: left;
+  margin-right: 8px;
+}
+
 .footer {
   // is not applicable now as <footer .Site-footer> is in play
   position: absolute;
